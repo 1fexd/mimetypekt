@@ -21,6 +21,10 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+tasks.withType<Jar> {
+    exclude(".idea", "venv", "fetch_latest_apache_tika_mimetypes.sh", "parse-mimetypes.py", "tika-mimetypes.xml")
+}
+
 tasks.test {
     useJUnitPlatform()
 }
