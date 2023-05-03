@@ -8,9 +8,9 @@ import fe.gson.extensions.string
 import java.io.InputStream
 
 object MimeTypeLoader {
-    sealed class MimeTypeHolder<T>(val map: Map<String, T>) {
-        class MimeTypeToExtensions(map: Map<String, List<String>>) : MimeTypeHolder<List<String>>(map)
-        class ExtensionToMimeType(map: Map<String, String>) : MimeTypeHolder<String>(map)
+    sealed interface MimeTypeHolder {
+        class MimeTypeToExtensions(val map: Map<String, List<String>>) : MimeTypeHolder
+        class ExtensionToMimeType(val map: Map<String, String>) : MimeTypeHolder
     }
 
     enum class Mapping {
@@ -29,9 +29,8 @@ object MimeTypeLoader {
             }
         };
 
-        abstract fun map(array: JsonArray): MimeTypeHolder<*>
+        abstract fun map(array: JsonArray): MimeTypeHolder
     }
-
 
     fun loadBuiltInMimeTypes(mapping: Mapping = Mapping.MimeTypeToExtensions) = mapping.map(
         loadMimeTypeJson(MimeTypeResource.getBuiltInMimeTypeJson()!!)
