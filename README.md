@@ -1,5 +1,4 @@
 # mimetypekt
 
-Leverages [apache tika's](https://github.com/apache/tika) (which appears to be quite heavy) mime-type mappings to
-provide a simple and lightweight mapping
-from (known)mime-types to file extensions.
+Leverages the mime-type mappings of [Apache Tika's](https://github.com/apache/tika) (since the library appears to be quite heavy)
+to provide a simple and lightweight mapping from (known)mime-types to file extensions.
