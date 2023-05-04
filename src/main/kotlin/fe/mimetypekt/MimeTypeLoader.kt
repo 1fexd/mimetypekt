@@ -32,6 +32,11 @@ object MimeTypeLoader {
         abstract fun map(array: JsonArray): MimeTypeHolder
     }
 
+    fun loadBuiltInMimeTypes(): Pair<MimeTypeHolder, MimeTypeHolder> {
+        val array = loadMimeTypeJson(MimeTypeResource.getBuiltInMimeTypeJson()!!)
+        return Mapping.MimeTypeToExtensions.map(array) to Mapping.ExtensionToMimeType.map(array)
+    }
+
     fun loadBuiltInMimeTypes(mapping: Mapping = Mapping.MimeTypeToExtensions) = mapping.map(
         loadMimeTypeJson(MimeTypeResource.getBuiltInMimeTypeJson()!!)
     )
