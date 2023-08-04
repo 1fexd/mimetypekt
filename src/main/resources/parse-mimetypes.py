@@ -12,24 +12,16 @@ for mime_type in root:
         result.append({"type": _type, "extensions": globs})
 
 
-def write_new_line(_file, _str, indent="", clean=False):
-    write(_file, _str, indent, clean)
+def write_new_line(_file, text, indent="", clean=False):
+    write(_file, text, indent, clean)
     _file.write("\n")
 
-
-def write(_file, _str, indent="", clean=False):
+def write(_file, text, indent="", clean=False):
     if clean:
-        cleaned_str = dedent(_str)
-        indented_str = ""
-        lines = cleaned_str.splitlines()
-        for index, line in enumerate(lines):
-            indented_str += indent + line
-            if index < len(lines) - 1:
-                indented_str += "\n"
+        lines = dedent(text).splitlines()
+        text = "\n".join([indent + line for line in lines])
 
-        _str = indented_str
-
-    _file.write(_str)
+    file.write(text)
 
 
 with open("../kotlin/fe/mimetypekt/MimeTypes.kt", "w") as kt_file:
