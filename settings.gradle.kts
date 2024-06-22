@@ -1,2 +1,3 @@
-rootProject.name = "mimetypekt"
+rootProject.name = "mimetype"
 
+includeBuild("../gson-ext")
