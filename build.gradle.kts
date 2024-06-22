@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.24"
     java
     `maven-publish`
-    id("net.nemerosa.versioning") version "3.0.0"
+    id("net.nemerosa.versioning") version "3.1.0"
 }
 
 group = "fe.mimetypekt"
