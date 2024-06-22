@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("fe.gson.ext:core")
+    implementation("fe.gson-ext:core")
     testImplementation(kotlin("test"))
 }
 
