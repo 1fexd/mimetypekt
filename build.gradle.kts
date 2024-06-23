@@ -10,10 +10,11 @@ version = versioning.info.tag ?: versioning.info.full
 
 repositories {
     mavenCentral()
+    maven(url = "https://jitpack.io")
 }
 
 dependencies {
-    implementation("fe.gson-ext:core")
+    implementation("com.gitlab.grrfe.gson-ext:core:16.0.0-gson2-koin3")
     testImplementation(kotlin("test"))
 }
 
