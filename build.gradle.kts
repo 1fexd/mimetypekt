@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    api(platform("com.github.1fexd:super:0.0.1"))
+    api(platform("com.github.1fexd:super:0.0.2"))
     api("com.gitlab.grrfe.gson-ext:core")
 
     testImplementation(kotlin("test"))
