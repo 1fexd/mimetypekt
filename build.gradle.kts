@@ -14,7 +14,9 @@ repositories {
 }
 
 dependencies {
-    implementation("com.gitlab.grrfe.gson-ext:core:16.0.0-gson2-koin3")
+    api(platform("com.github.1fexd.super:platform:0.0.1"))
+    api("com.gitlab.grrfe.gson-ext:core")
+
     testImplementation(kotlin("test"))
 }
 
